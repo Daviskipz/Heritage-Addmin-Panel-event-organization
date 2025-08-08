@@ -1,0 +1,404 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    color: #1a237e;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.dashboard-panel {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-full {
+    grid-column: 1 / -1;
+}
+
+.panel-two-third {
+    grid-column: span 2;
+}
+
+.panel-one-third {
+    grid-column: span 1;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.panel-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+.btn-add {
+    background-color: #1a237e;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #121a5c;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filter-controls input, .filter-controls select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    flex: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    padding: 12px;
+    background-color: #f7f7f7;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.upcoming { background-color: #2196F3; }
+.active { background-color: #4CAF50; }
+.ended { background-color: #f44336; }
+
+.btn-action {
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+}
+
+.btn-action.edit {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.btn-action.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.analytics-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.chart-container {
+    width: calc(50% - 10px);
+    min-width: 300px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chart-container.small-chart {
+    width: calc(33% - 15px);
+    min-width: 200px;
+}
+
+.chart-container h3 {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+.budget-info {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.budget-info span {
+    font-weight: bold;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.task-list li:last-child {
+    border-bottom: none;
+}
+
+.task-list input[checkbox] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.calendar-container {
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header h3 {
+    margin: 0;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #555;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 5px;
+}
+
+.calendar-grid div {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.calendar-grid .day-name {
+    font-weight: bold;
+    color: #888;
+}
+
+.calendar-grid .day {
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+.calendar-grid .day:hover {
+    background-color: #e0e0e0;
+}
+
+.calendar-grid .event-day {
+    background-color: #1a237e;
+    color: white;
+    font-weight: bold;
+}
+
+.timeline-container {
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: center;
+    color: #777;
+}
+
+.performance-metrics-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.document-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.document-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.document-list li:last-child {
+    border-bottom: none;
+}
+
+.document-list a {
+    text-decoration: none;
+    color: #337ab7;
+}
+
+.event-details {
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.event-details h3 {
+    margin-top: 0;
+    color: #1a237e;
+}
+
+.event-details strong {
+    font-weight: bold;
+}
+
+.media-gallery {
+    margin-top: 10px;
+}
+
+.media-gallery img {
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.video-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.video-links li {
+    margin-bottom: 5px;
+}
+
+.integrations {
+    text-align: center;
+    padding: 20px;
+}
+
+.integration-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.integration-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.integration-button.slack {
+    background-color: #4a154b;
+}
+
+.integration-button.google-drive {
+    background-color: #34a853;
+}
+
+.notifications {
+    padding: 15px;
+}
+
+.notification-list {
+    list-style: none;
+    padding: 0;
+}
+
+.notification-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.notification-list li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .panel-two-third, .panel-one-third {
+        grid-column: span 1;
+    }
+    .analytics-container {
+        flex-direction: column;
+    }
+    .chart-container {
+        width: 100%;
+    }
+    .chart-container.small-chart {
+        width: 100%;
+    }
+    .integration-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .integration-button {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}

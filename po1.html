@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Dashboard</title>
+    <link rel="stylesheet" href="s1.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-header">
+        <h1>Event Management Dashboard</h1>
+        <div class="header-actions">
+            <button class="btn btn-primary" onclick="printDashboard()">Print</button>
+            <button class="btn btn-primary" onclick="downloadDashboard()">Download</button>
+        </div>
+    </div>
+    <div class="dashboard-grid">
+        <div class="dashboard-panel panel-full">
+            <div class="panel-header">
+                <h2>Event Timeline</h2>
+            </div>
+            <div class="timeline-container">
+                <p>Timeline view will be implemented here.</p>
+            </div>
+        </div>
+        <div class="dashboard-panel panel-full">
+            <div class="panel-header">
+                <h2>Event Performance Metrics</h2>
+            </div>
+            <div class="performance-metrics-container">
+                <div class="chart-container small-chart">
+                    <canvas id="attendanceChart"></canvas>
+                    <h3>Attendance Rate</h3>
+                </div>
+                <div class="chart-container small-chart">
+                    <canvas id="feedbackChart"></canvas>
+                    <h3>Feedback Score</h3>
+                </div>
+                <div class="chart-container small-chart">
+                    <canvas id="budgetVsActualChart"></canvas>
+                    <h3>Budget vs Actual</h3>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-panel panel-one-third">
+            <div class="panel-header">
+                <h2>Calendar</h2>
+            </div>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h3 id="currentMonth"></h3>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
+        </div>
+        <div class="dashboard-panel panel-two-third">
+            <div class="panel-header">
+                <h2>Upcoming Events</h2>
+                <button class="btn btn-add">+ Add Event</button>
+            </div>
+            <div class="filter-controls">
+                <input type="text" id="searchEvents" placeholder="Search events...">
+                <select id="statusFilter">
+                    <option value="">All Statuses</option>
+                    <option value="Upcoming">Upcoming</option>
+                    <option value="Active">Active</option>
+                    <option value="Ended">Ended</option>
+                </select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Venue</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="eventTableBody">
+                    <tr>
+                        <td>Tech Conference 2025</td>
+                        <td>2025-09-15</td>
+                        <td>Convention Center</td>
+                        <td><span class="status upcoming">Upcoming</span></td>
+                        <td>
+                            <button class="btn-action edit">Edit</button>
+                            <button class="btn-action delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Annual Gala</td>
+                        <td>2025-10-22</td>
+                        <td>Grand Hotel</td>
+                        <td><span class="status active">Active</span></td>
+                        <td>
+                            <button class="btn-action edit">Edit</button>
+                            <button class="btn-action delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="dashboard-panel panel-one-third">
+            <div class="panel-header">
+                <h2>Tasks & Checklist</h2>
+            </div>
+            <ul class="task-list">
+                <li><input type="checkbox" checked> Book the venue</li>
+                <li><input type="checkbox"> Send out invitations</li>
+                <li><input type="checkbox"> Arrange catering</li>
+                <li><input type="checkbox"> Confirm speakers</li>
+                <li><input type="checkbox"> Prepare presentation materials</li>
+            </ul>
+        </div>
+        <div class="dashboard-panel panel-two-third">
+            <div class="panel-header">
+                <h2>Document & Asset Library</h2>
+                <button class="btn btn-add">+ Add Document</button>
+            </div>
+            <ul class="document-list">
+                <li><a href="#">Marketing Plan.pdf</a></li>
+                <li><a href="#">Venue Contract.docx</a></li>
+                <li><a href="#">Speaker Agreement.pdf</a></li>
+                </ul>
+        </div>
+        <div class="dashboard-panel panel-one-third">
+            <div class="panel-header">
+                <h2>Enhanced Event Details</h2>
+            </div>
+            <div class="event-details">
+                <h3>Tech Conference 2025</h3>
+                <p><strong>Description:</strong> A major conference for tech enthusiasts and professionals...</p>
+                <div class="media-gallery">
+                    <h4>Gallery</h4>
+                    <img src="placeholder_image.png" alt="Event Image" width="50">
+                    <img src="placeholder_image.png" alt="Event Image" width="50">
+                </div>
+                <div class="video-links">
+                    <h4>Videos</h4>
+                    <ul>
+                        <li><a href="#">Promotional Video</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-panel panel-full integrations">
+            <div class="panel-header">
+                <h2>Integrations</h2>
+            </div>
+            <div class="integration-links">
+                <a href="#" class="integration-button slack">Connect to Slack</a>
+                <a href="#" class="integration-button google-drive">Connect to Google Drive</a>
+                </div>
+        </div>
+        <div class="dashboard-panel panel-full notifications">
+            <div class="panel-header">
+                <h2>Notifications</h2>
+            </div>
+            <ul class="notification-list">
+                <li>Reminder: Tech Conference 2025 is next week!</li>
+                <li>Task "Send out invitations" is due tomorrow.</li>
+                </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
