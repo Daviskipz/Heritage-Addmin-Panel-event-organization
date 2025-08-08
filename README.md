@@ -95,6 +95,6 @@ It provides a unified and interactive experience for event organizers, with tool
 ---
 
 📌 How to Use
-1. Clone the repository:
+1. Clone the repository:https://github.com/Daviskipz/Heritage-Addmin-Panel-event-organization
    ```bash
    git clone https://github.com/your-username/event-management-dashboard.git
